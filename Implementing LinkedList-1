@@ -1,0 +1,39 @@
+package collections;
+import java.util.*;
+
+public class LinkedListDemo1 
+{
+
+	public static void main(String[] args) 
+	{
+		LinkedList<Integer> l=new LinkedList<Integer>();
+		l.add(100);
+		l.addFirst(50);
+		l.addLast(200);
+		l.add(3,44);
+		
+		Iterator i=l.iterator();
+		while(i.hasNext())
+		{
+			System.out.println(i.next());
+		}
+		
+		System.out.println(l.getFirst());
+		System.out.println(l.getLast());
+		System.out.println();
+		
+		l.offerLast(90);   //offer can be used instead of set
+		l.removeFirst();
+		
+		for(int a:l)
+		{
+			System.out.println(a);
+		}
+		
+		System.out.println(l.peek());   // peek retrieves first element of list		
+		System.out.println(l.peek());   // poll retrieves and removes the first element of list
+		
+		
+	}
+
+}
