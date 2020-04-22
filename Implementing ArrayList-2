@@ -1,0 +1,43 @@
+package collections;
+import java.util.*;
+class Consumer
+{
+	String name;
+	String product;
+	int cost;
+	public Consumer(String name,String product,int cost)
+	{
+		this.name=name;
+		this.product=product;
+		this.cost=cost;
+	}
+	
+	public String toString()                              //overriden this because we are trying to print an object
+	{
+		return name+" uses "+product+" which costed him "+cost+" Rs.";
+	}
+}
+public class ArrayListDemo2 
+{
+
+	public static void main(String[] args) 
+	{
+		Consumer c1=new Consumer("David","Shower gel",500);
+		Consumer c2=new Consumer("Rajat","Tobacco",60);
+		Consumer c3=new Consumer("Ranveer","Jacket",4500);
+		
+		ArrayList<Consumer> arr=new ArrayList<Consumer>();
+		arr.add(c1);
+		arr.add(c2);
+		arr.add(c3);
+		
+		List<Consumer> arr1=arr.subList(0, 1);
+		
+		for(int i=0;i<arr.size();i++)
+		{
+			System.out.println(arr.get(i));
+		}
+
+	}
+
+}
