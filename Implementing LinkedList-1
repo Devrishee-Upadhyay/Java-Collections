@@ -31,7 +31,7 @@ public class LinkedListDemo1
 		}
 		
 		System.out.println(l.peek());   // peek retrieves first element of list		
-		System.out.println(l.peek());   // poll retrieves and removes the first element of list
+		System.out.println(l.poll());   // poll retrieves and removes the first element of list
 		
 		
 	}
