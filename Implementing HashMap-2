@@ -1,0 +1,50 @@
+package collections;
+import java.util.*;
+
+class Player
+{
+  String name;
+  int age;
+  public Player(String name,int age)
+  {
+	  this.name=name;
+	  this.age=age;
+  }
+  
+  public String toString()
+  {
+	  return name+" age:"+age;
+  }
+}
+public class HashMapDemo2 
+{
+
+	public static void main(String[] args) 
+	{
+		HashMap<Integer,Player> h=new HashMap();
+		Player p1=new Player("Salah",27);
+		Player p2=new Player("Trent",20);
+		Player p3=new Player("Milner",32);
+		Player p4=new Player("Gomez",23);
+		Player p5=new Player("Van Dijk",27);
+		
+		h.put(1, p1);
+		h.put(1, p2);   // This overrides the previous key value
+		h.put(2, p3);
+        h.put(3, p4);
+        
+		System.out.println(h.entrySet());
+		
+		h.remove(1);
+		System.out.println(h.entrySet());
+		
+		h.replace(2, p5);
+		
+		for(Map.Entry m:h.entrySet())
+		{
+			System.out.println("ID:"+m.getKey()+" "+m.getValue());
+		}
+		
+	}
+
+}
