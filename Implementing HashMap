@@ -1,0 +1,37 @@
+package collections;
+import java.util.*;
+
+public class HashMapDemo 
+{
+
+	public static void main(String[] args) 
+	{
+		 HashMap<Integer,String> h=new HashMap();
+		 h.put(1,"Liverpool");
+		 h.put(2,"AC Milan");
+		 h.put(3, "Chelsea");
+		 h.put(4, "Barcelona");
+		 
+		 System.out.println(h.keySet());
+		 System.out.println(h.values());
+		 System.out.println(h.entrySet());
+		 
+		 for(int i:h.keySet())
+		 {
+			 System.out.println(i);
+		 }
+		 
+		 for(String s:h.values())
+		 {
+			 System.out.println(s);
+		 }
+		 
+		 for(Map.Entry m:h.entrySet())
+		 {
+			 System.out.println(m.getKey()+" "+m.getValue());
+		 }
+		 
+		 System.out.println("Value for key=2 is "+h.get(2));
+	}
+
+}
