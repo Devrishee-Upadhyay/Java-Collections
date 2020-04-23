@@ -1,0 +1,27 @@
+package collections;
+import java.util.*;
+
+public class PriorityQueueDemo {
+
+	public static void main(String[] args) 
+	{
+		PriorityQueue<Integer> p=new PriorityQueue();
+		p.add(6);
+		p.add(3);
+        p.add(4);
+        p.add(10);
+        
+        System.out.println("Poll value:"+p.poll());
+        System.out.println("Peek value:"+p.peek());
+        System.out.println(p);
+        
+        p.remove();   // removes head, this is different from poll as it returns excep if queue is empty
+        
+        Iterator<Integer> i=p.iterator();
+        while(i.hasNext())
+        {
+        	System.out.println(i.next());
+        }
+	}
+
+}
