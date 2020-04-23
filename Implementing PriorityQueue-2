@@ -1,0 +1,44 @@
+package collections;
+import java.util.*;
+class Student implements Comparable<Student>
+{
+	String name;
+	int age;
+	public Student(String name,int age)
+	{
+		this.name=name;
+		this.age=age;
+	}
+	public int compareTo(Student s)        //Since we are using objects as members of pqueue, we have to implement
+	{                                      //comparable interface and compareTo method, else there would be classcast exception.
+		if(this.age>s.age)
+			return 1;
+		if(this.age<s.age)
+			return -1;
+		
+		return 0;
+		
+	}
+	
+}
+public class PriorityQueueDemo2 
+{
+
+	public static void main(String[] args) 
+	{
+		Student s1=new Student("Kevin",22);
+		Student s2=new Student("Sadio",24);
+		Student s3=new Student("Jadon",20);
+		
+		PriorityQueue<Student> pr=new PriorityQueue();
+		pr.add(s1);
+		pr.add(s2);
+		pr.add(s3);
+		
+		for(Student s:pr)
+		{
+			System.out.println(s.name+" is "+s.age+" years old.");
+		}
+	}
+
+}
