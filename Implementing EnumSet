@@ -1,0 +1,28 @@
+package collections;
+import java.util.*;
+public class EnumSetDemo 
+{
+    enum days{SUNDAY,MONDAY,TUESDAY,WEDNESDAY,THURSDAY,FRIDAY,SATURDAY};
+    enum months{JAN,FEB,MAR,APR};
+	public static void main(String[] args) 
+	{
+		Set<days> s=EnumSet.of(days.MONDAY,days.FRIDAY);
+        Set<days> s2=EnumSet.allOf(days.class);
+        Set<days> s3=EnumSet.noneOf(days.class);
+        
+        Set<months> s4=EnumSet.range(months.JAN, months.MAR);
+        
+        System.out.println(s);
+        Iterator<days> i=s2.iterator();
+        while(i.hasNext())
+        	System.out.println(i.next());
+        
+        System.out.println(s3);
+        
+        for(months m:s4)
+        {
+        	System.out.println(m);
+        }
+	}
+
+}
