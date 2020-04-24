@@ -1,0 +1,30 @@
+package collections;
+import java.util.*;
+public class EnumMapDemo 
+{
+    enum days{SUNDAY,MONDAY,TUESDAY,WEDNESDAY,THURSDAY,FRIDAY,SATURDAY};
+    enum months{JAN,FEB,MAR,APR};
+    
+	public static void main(String[] args) 
+	{
+		Map<days,Integer> m=new EnumMap<days,Integer>(days.class);
+		m.put(days.SATURDAY,1);
+		m.put(days.MONDAY,2);
+		m.put(days.SUNDAY,3);
+		
+		System.out.println(m.values());
+		if(m.containsKey(1))
+		{
+			System.out.println(m.get(1));
+		}
+		
+		m.remove(3);
+		m.put(days.THURSDAY,4);
+		for(Map.Entry i:m.entrySet())
+		{
+			System.out.println(i.getKey()+" "+i.getValue());
+		}
+
+	}
+
+}
