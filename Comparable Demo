@@ -1,0 +1,50 @@
+package collections;
+import java.util.*;
+class Book implements Comparable<Book>
+{
+	String name;
+	int price;
+	public Book(String name,int price)
+	{
+		this.name=name;
+		this.price=price;
+	}
+	
+	public int compareTo(Book o)
+	{
+	  if(this.price>o.price)
+		 return 1;
+	  if(this.price<o.price)
+		 return -1;
+	  
+	  return 0;
+	}
+	
+	public String toString()
+	{
+		return name+" costs "+price+" rs.";
+	}
+}
+public class ComparableDemo {
+
+	public static void main(String[] args) 
+	{
+		Book b1=new Book("The subtle art of not giving a fuck",450);
+		Book b2=new Book("The Alchemist",370);
+		Book b3=new Book("A train to Pakistan",400);
+
+		ArrayList<Book> arr=new ArrayList();
+		arr.add(b1);
+		arr.add(b2);
+		arr.add(b3);
+		
+		Collections.sort(arr);   // when sorting user defined class in a list we need to define compareTo method
+		System.out.println(arr);
+		
+		for(Book b:arr)
+		{
+			System.out.println(b);
+		}
+	}
+
+}
