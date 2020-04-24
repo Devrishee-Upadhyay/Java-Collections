@@ -1,0 +1,52 @@
+package collections;
+import java.util.*;
+class Marks
+{
+	String subject;
+	int value;
+	Marks(String s,int v)
+	{
+		subject=s;
+		value=v;
+	}
+	String getSubject()
+	{
+		return subject;
+	}
+	int getValue()
+	{
+		return value;
+	}
+}
+public class ComparatorDemo 
+{
+
+	public static void main(String[] args) 
+	{
+		Marks m1=new Marks("English",95);
+		Marks m2=new Marks("Liberal Arts",98);
+		Marks m3=new Marks("Psychology",90);
+		
+		Comparator<Marks> c=Comparator.comparing(Marks::getValue);   // since java 8 we can use comparing method 
+		ArrayList<Marks> arr=new ArrayList();
+		arr.add(m1);
+		arr.add(m2);
+		arr.add(m3);
+		
+		Collections.sort(arr,c);
+        System.out.println("Sorting according to value :");
+        for(Marks m:arr)
+        {
+        	System.out.println(m.getSubject()+" "+m.getValue());       	
+        }
+        
+        Comparator<Marks> c1=Comparator.comparing(Marks::getSubject);
+        Collections.sort(arr,c);
+        System.out.println("Sorting according to Name :");
+        for(Marks m:arr)
+        {
+        	System.out.println(m.getSubject()+" "+m.getValue());       	
+        }
+	}
+
+}
