@@ -1,0 +1,60 @@
+package collections;
+import java.util.*;
+
+class A 
+{
+	String name;
+	int val;
+	A(String name,int val)
+	{
+		this.name=name;
+		this.val=val;
+	}
+	
+	public String toString()
+	{
+		return name+" has value "+val;
+	}
+}
+
+class ValCompare implements Comparator<A>
+{
+	public int compare(A a1,A a2)
+	{
+		if(a1.val==a2.val)
+			return 0;
+		if(a1.val>a2.val)
+			return 1;
+		
+	  return -1;
+	}	
+}
+
+class NameCompare implements Comparator<A>
+{
+	public int compare(A a1,A a2)
+	{
+		return a1.name.compareTo(a2.name);
+	}
+}
+public class ComparatorDemo2 
+{
+
+	public static void main(String[] args) 
+	{
+		A a1=new A("Wish",1500);
+		A a2=new A("Dreams",1000);
+		A a3=new A("Life",0);
+		ArrayList<A> arr=new ArrayList();
+		arr.add(a1);
+		arr.add(a2);
+		arr.add(a3);
+		
+		Collections.sort(arr, new ValCompare());
+        System.out.println(arr);
+        
+        Collections.sort(arr, new NameCompare());
+        System.out.println(arr);
+	}
+
+}
